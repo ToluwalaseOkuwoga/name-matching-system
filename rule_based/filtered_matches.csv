@@ -1,0 +1,4 @@
+Name,Nationality,Birthdate,Preprocessed_Name,Matched_Name,Match_Score,Contextual_Match
+Robin Hernandez,Cocos (Keeling) Islands,1978-11-27,robin hernandez,aron hernndez,85.71428571428572,1
+Michael Reeves,Central African Republic,1987-12-08,michael reeves,michael graves,85.71428571428572,1
+Kenneth Smith,Antarctica (the territory South of 60 deg S),1993-07-26,kenneth smith,kenneth smith,100.0,1
