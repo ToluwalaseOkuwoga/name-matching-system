@@ -1,75 +1,76 @@
-Overview
+# Rule-Based Name Matching System
+
+This folder contains the implementation of a **rule-based system** for name matching, specifically designed for sanctions screening.
+
+---
+
+## Overview
 
 The rule-based system works in the following steps:
 
-Data Generation:
+### Data Generation
+- Synthetic datasets for customers and sanctioned names are generated using the `Faker` library.
+- The datasets include attributes like names, nationalities, and birthdates.
 
-Synthetic datasets for customers and sanctioned names are generated using the Faker library.
+### Data Preprocessing
+- Names are preprocessed by removing special characters, converting to lowercase, and stripping whitespace.
+- Preprocessed names are used for efficient and consistent matching.
 
-The datasets include attributes like names, nationalities, and birthdates.
+### Fuzzy Matching
+- The `rapidfuzz` library is used for text similarity scoring.
+- Customer names are compared against sanctioned names with a customizable threshold for matching.
 
-Data Preprocessing:
+### Contextual Filtering
+- Contextual rules, such as matching based on nationality, are applied to reduce false positives.
 
-Names are preprocessed by removing special characters, converting to lowercase, and stripping whitespace.
+### Streamlit Dashboard
+- A Streamlit app is provided for interactive exploration of the results.
+- Users can adjust the matching threshold dynamically and view the filtered matches.
 
-Preprocessed names are used for efficient and consistent matching.
+---
 
-Fuzzy Matching:
+## File Descriptions
 
-The rapidfuzz library is used for text similarity scoring.
+- **`sanctions_screening_app.py`**:
+  - The main script that integrates all functionalities, including data generation, preprocessing, matching, and dashboard creation.
 
-Customer names are compared against sanctioned names with a customizable threshold for matching.
+- **`customers_data.csv`**:
+  - A synthetic dataset containing customer names, nationalities, and birthdates.
 
-Contextual Filtering:
+- **`sanctioned_data.csv`**:
+  - A synthetic dataset of sanctioned names with variations such as aliases, misspellings, and scrambled names.
 
-Contextual rules, such as matching based on nationality, are applied to reduce false positives.
+- **`filtered_matches.csv`**:
+  - The results of the rule-based matching process after applying contextual filters.
 
-Streamlit Dashboard:
+---
 
-A Streamlit app is provided for interactive exploration of the results.
+## Key Features
 
-Users can adjust the matching threshold dynamically and view the filtered matches.
+### Customizable Matching Threshold
+- Users can adjust the threshold for fuzzy matching through the Streamlit dashboard.
 
-File Descriptions
+### Contextual Rules
+- Filters based on additional attributes like nationality to improve precision.
 
-sanctions_screening_app.py:
+### Interactive Dashboard
+- A visual interface for exploring results and fine-tuning parameters.
 
-The main script that integrates all functionalities, including data generation, preprocessing, matching, and dashboard creation.
+---
 
-customers_data.csv:
+## How to Run
 
-A synthetic dataset containing customer names, nationalities, and birthdates.
-
-sanctioned_data.csv:
-
-A synthetic dataset of sanctioned names with variations such as aliases, misspellings, and scrambled names.
-
-filtered_matches.csv:
-
-The results of the rule-based matching process after applying contextual filters.
-
-Key Features
-
-Customizable Matching Threshold:
-
-Users can adjust the threshold for fuzzy matching through the Streamlit dashboard.
-
-Contextual Rules:
-
-Filters based on additional attributes like nationality to improve precision.
-
-Interactive Dashboard:
-
-A visual interface for exploring results and fine-tuning parameters.
-
-How to Run
-
-Install required libraries:
-
+### Install Required Libraries
+Run the following command to install the necessary libraries:
+```bash
 pip install streamlit pandas rapidfuzz faker
+```
 
-Run the Streamlit app:
-
+### Run the Streamlit App
+Execute the following command to launch the app:
+```bash
 streamlit run sanctions_screening_app.py
+```
 
-Adjust the threshold slider in the dashboard to explore different matching results.
+### Explore Results
+- Adjust the threshold slider in the dashboard to explore different matching results.
